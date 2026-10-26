@@ -1,0 +1,40 @@
+UniAction
+Copyright 2026 Bowen Xue, Zizhang Li, Hong-Xing Yu, and Jiajun Wu.
+Licensed under the Apache License, Version 2.0 (LICENSE).
+
+The Wan runtime in src/uniaction/backbones/wan is adapted from:
+
+DiffSynth-Studio — https://github.com/modelscope/DiffSynth-Studio
+Copyright 2023 Zhongjie Duan. Apache License 2.0.
+
+Wan2.2 — https://github.com/Wan-Video/Wan2.2
+Copyright 2024-2025 The Alibaba Wan Team Authors. All rights reserved.
+Apache License 2.0.
+
+The Flow-UniPC scheduler is adapted from Wan and Diffusers:
+https://github.com/huggingface/diffusers
+Copyright 2025 TSAIL Team and The HuggingFace Team. All rights reserved.
+Apache License 2.0.
+
+These files have been modified for UniAction's imports, model loading,
+conditioning, execution, and packaging.
+
+The camera overlay images include rendered Liberation Sans Bold lettering.
+Liberation is a trademark of Red Hat, Inc. No font software is bundled.
+
+The hand-pose example assets include material from EgoDex, licensed under
+Creative Commons Attribution-NonCommercial-NoDerivatives (CC BY-NC-ND):
+https://github.com/apple-aiml-research/ml-egodex#license
+These assets are not covered by the code's Apache-2.0 license.
+The robot-pose examples include material from DROID (CC BY 4.0):
+https://droid-dataset.github.io/
+The camera examples include material distributed through SolarWM:
+https://github.com/Junchao-cs/SolarWM
+
+The flower reference images in src/uniaction/assets/flower/reference_bank.npz
+are from Goal Force:
+https://huggingface.co/datasets/brown-palm/goal-force-training-datasets
+Copyright (c) 2025 Nate Gillman. MIT License; see licenses/GoalForce-MIT.txt.
+
+The first-frame images in examples/3 and examples/4 are generated images.
+Third-party example and evaluation assets retain their source licenses.

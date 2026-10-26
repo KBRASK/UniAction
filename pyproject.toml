@@ -1,0 +1,62 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "uniaction"
+version = "1.0.0"
+description = "UniAction: Unified Action Conditioning for World Models"
+readme = "README.md"
+authors = [{name = "Bowen Xue"}, {name = "Zizhang Li"}, {name = "Hong-Xing Yu"}, {name = "Jiajun Wu"}]
+license = {file = "LICENSE"}
+requires-python = ">=3.11,<3.12"
+dependencies = [
+  "torch==2.10.0",
+  "torchvision==0.25.0",
+  "einops==0.8.2",
+  "ftfy==6.3.1",
+  "huggingface-hub==1.12.0",
+  "numpy==2.4.2",
+  "imageio==2.37.2",
+  "imageio-ffmpeg==0.6.0",
+  "Pillow==11.3.0",
+  "regex==2026.2.19",
+  "safetensors==0.7.0",
+  "tqdm==4.67.3",
+  "transformers==5.6.2",
+  "typing-extensions==4.15.0",
+]
+
+[project.optional-dependencies]
+fast = ["flash-attn-4==4.0.0b24", "quack-kernels==0.5.3"]
+overlay = ["opencv-python-headless==4.13.0.92"]
+train = ["accelerate==1.13.0"]
+data = ["opencv-python-headless==4.13.0.92", "h5py==3.15.1"]
+eval = [
+  "lpips==0.1.4", "scipy==1.17.1",
+  "opencv-python-headless==4.13.0.92",
+  "cotracker @ git+https://github.com/facebookresearch/co-tracker.git@82e02e8029753ad4ef13cf06be7f4fc5facdda4d",
+]
+
+[project.scripts]
+uniaction-generate = "uniaction.cli.generate:main"
+uniaction-train = "uniaction.cli.train:main"
+uniaction-cache = "uniaction.cli.cache:main"
+uniaction-export = "uniaction.cli.export:main"
+uniaction-eval = "uniaction.cli.evaluate:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+license-files = ["LICENSE", "NOTICE", "licenses/*.txt"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["uniaction*"]
+namespaces = false
+
+[tool.setuptools.package-data]
+uniaction = ["assets/camera-*.png", "assets/flower/*.json", "assets/flower/*.npz"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"

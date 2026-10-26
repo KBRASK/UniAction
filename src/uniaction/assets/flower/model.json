@@ -1,0 +1,37 @@
+{
+  "schema": "uniaction-flower-detector",
+  "opencv_version": "4.13.0",
+  "config": {
+    "intervals": 7,
+    "method": "ridge",
+    "motion_signal_threshold_px": 1.0,
+    "representation": "cumulative",
+    "ridge": 1.0,
+    "scale_floor_fraction": 0.1
+  },
+  "feature_config": {
+    "coherence_threshold": 0.2,
+    "max_force_point_distance_px": 8.0,
+    "min_registration_inliers": 24,
+    "radii_px": [
+      12.0,
+      26.0,
+      40.0
+    ],
+    "registration_reprojection_px": 2.0,
+    "response_intervals": 14
+  },
+  "observability_config": {
+    "frame_offsets": [
+      7,
+      14
+    ],
+    "min_local_points": 8,
+    "min_textured_points": 24,
+    "residual_quantile": 0.9,
+    "residual_threshold_px": 1.0
+  },
+  "observability_required": true,
+  "weights_path": "weights.npz",
+  "view_bank_path": "reference_bank.npz"
+}

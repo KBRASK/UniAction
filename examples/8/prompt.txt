@@ -1,0 +1,1 @@
+A robot arm operates above a packing workbench in an ordinary workshop. Natural precise manipulator motion, consistent tool geometry and stable workbench objects and surroundings.
